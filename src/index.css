@@ -1,0 +1,280 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* LinguaQuest Design System - Beautiful, game-like language learning interface */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Main theme colors - Deep Blue Learning */
+    --background: 220 25% 8%;
+    --foreground: 210 20% 98%;
+    
+    /* Card and surface colors */
+    --card: 220 20% 12%;
+    --card-foreground: 210 20% 98%;
+    
+    /* Interactive elements */
+    --popover: 220 20% 12%;
+    --popover-foreground: 210 20% 98%;
+    
+    /* Primary brand colors - Vibrant learning blue */
+    --primary: 210 100% 60%;
+    --primary-foreground: 220 25% 8%;
+    --primary-glow: 210 100% 70%;
+    
+    /* Secondary colors - Warm purple accent */
+    --secondary: 260 60% 45%;
+    --secondary-foreground: 210 20% 98%;
+    --secondary-glow: 260 60% 55%;
+    
+    /* Success and achievement colors */
+    --success: 142 76% 36%;
+    --success-foreground: 210 20% 98%;
+    --success-glow: 142 76% 46%;
+    
+    /* Warning and attention colors */
+    --warning: 38 92% 50%;
+    --warning-foreground: 220 25% 8%;
+    --warning-glow: 38 92% 60%;
+    
+    /* Error and hearts */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
+    --heart: 0 100% 65%;
+    
+    /* Muted elements */
+    --muted: 220 15% 18%;
+    --muted-foreground: 215 15% 65%;
+    
+    /* Accent colors for gamification */
+    --accent: 45 93% 58%;
+    --accent-foreground: 220 25% 8%;
+    --accent-glow: 45 93% 68%;
+    
+    /* XP and progress colors */
+    --xp: 120 65% 55%;
+    --xp-foreground: 220 25% 8%;
+    --xp-glow: 120 65% 65%;
+    
+    /* Borders and inputs */
+    --border: 220 15% 20%;
+    --input: 220 15% 18%;
+    --ring: 210 100% 60%;
+    
+    /* Gradients for beautiful backgrounds */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-glow)));
+    --gradient-success: linear-gradient(135deg, hsl(var(--success)), hsl(var(--success-glow)));
+    --gradient-xp: linear-gradient(135deg, hsl(var(--xp)), hsl(var(--xp-glow)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 50%, hsl(var(--accent)) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(220 20% 14%) 100%);
+    
+    /* Shadows with brand colors */
+    --shadow-primary: 0 10px 30px -5px hsl(var(--primary) / 0.3);
+    --shadow-secondary: 0 10px 30px -5px hsl(var(--secondary) / 0.3);
+    --shadow-success: 0 10px 30px -5px hsl(var(--success) / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.4);
+    --shadow-card: 0 4px 20px hsl(220 25% 5% / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-fast: all 0.15s ease-out;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  .font-fredoka {
+    font-family: 'Fredoka', cursive;
+  }
+  
+  .font-inter {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  /* Game-like button variants */
+  .btn-game {
+    @apply bg-gradient-to-r from-primary to-primary-glow text-primary-foreground font-fredoka font-semibold rounded-2xl px-6 py-3 shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/40 transform hover:scale-105 transition-all duration-200 active:scale-95;
+  }
+  
+  .btn-success {
+    @apply bg-gradient-to-r from-success to-success-glow text-success-foreground font-fredoka font-semibold rounded-2xl px-6 py-3 shadow-lg shadow-success/25 hover:shadow-xl hover:shadow-success/40 transform hover:scale-105 transition-all duration-200 active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply bg-gradient-to-r from-secondary to-secondary-glow text-secondary-foreground font-fredoka font-semibold rounded-2xl px-6 py-3 shadow-lg shadow-secondary/25 hover:shadow-xl hover:shadow-secondary/40 transform hover:scale-105 transition-all duration-200 active:scale-95;
+  }
+  
+  .btn-warning {
+    @apply bg-gradient-to-r from-warning to-warning-glow text-warning-foreground font-fredoka font-semibold rounded-2xl px-6 py-3 shadow-lg shadow-warning/25 hover:shadow-xl hover:shadow-warning/40 transform hover:scale-105 transition-all duration-200 active:scale-95;
+  }
+  
+  /* Card styles */
+  .card-game {
+    @apply bg-gradient-to-br from-card to-card/80 backdrop-blur-sm border border-border/50 rounded-3xl p-6 shadow-lg shadow-card hover:shadow-xl transition-all duration-300;
+  }
+  
+  .card-interactive {
+    @apply card-game hover:border-primary/50 hover:shadow-primary/20 cursor-pointer transform hover:scale-[1.02] transition-all duration-200;
+  }
+  
+  /* XP and progress styles */
+  .xp-bar {
+    @apply bg-gradient-to-r from-xp to-xp-glow h-3 rounded-full shadow-inner transition-all duration-500 ease-out;
+  }
+  
+  .heart-icon {
+    @apply text-heart animate-pulse;
+  }
+  
+  /* Animation classes */
+  .animate-bounce-in {
+    animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  .animate-shake {
+    animation: shake 0.5s ease-in-out;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-success {
+    @apply bg-gradient-to-r from-success to-success-glow bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-xp {
+    @apply bg-gradient-to-r from-xp to-xp-glow bg-clip-text text-transparent;
+  }
+}
+
+/* Custom animations */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px hsl(var(--primary-glow)), 0 0 20px hsl(var(--primary-glow)), 0 0 30px hsl(var(--primary-glow));
+  }
+  to {
+    text-shadow: 0 0 20px hsl(var(--primary-glow)), 0 0 30px hsl(var(--primary-glow)), 0 0 40px hsl(var(--primary-glow));
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-4px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(4px);
+  }
+}
