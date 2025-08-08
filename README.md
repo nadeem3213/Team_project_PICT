@@ -1,6 +1,10 @@
 # Team_project_PICT
 Tech Rush hackathon
 
+## Project info
+
+**URL**: https://team-project-techrush.vercel.app/
+
 # LinguaQuest Adventure
 
 LinguaQuest Adventure is an interactive web application designed to make learning languages fun and engaging through quizzes, challenges, and gamified experiences.  
