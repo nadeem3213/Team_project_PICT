@@ -2,7 +2,7 @@
 Tech Rush hackathon
 
 ## Project info
-**URL1**: https://team-project-pict.vercel.app/
+**URL1**: https://team-project-pict.vercel.app/ <br>
 **URL2**: https://team-project-pict-ltfz-shaikh-nadeems-projects.vercel.app/
 
 # LinguaQuest Adventure
@@ -27,6 +27,9 @@ Built with modern tools and clean UI design, it provides a smooth experience for
 - **Bundler:** Vite  
 
 ---
+## Made by
+1.Shaikh Nadeem <br>
+2.Aditya Yadav
 
 ## Installation & Setup
 Follow these steps to run the project locally:
