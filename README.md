@@ -3,7 +3,7 @@ Tech Rush hackathon
 
 ## Project info
 
-**URL**: https://team-project-techrush.vercel.app/
+**URL**: https://team-project-pict-ltfz-shaikh-nadeems-projects.vercel.app/
 
 # LinguaQuest Adventure
 
