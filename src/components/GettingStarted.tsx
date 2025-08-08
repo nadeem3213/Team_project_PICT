@@ -23,7 +23,11 @@ const steps = [
   }
 ];
 
-export const GettingStarted = () => {
+interface GettingStartedProps {
+  onStartAdventure?: () => void;
+}
+
+export const GettingStarted = ({ onStartAdventure }: GettingStartedProps = {}) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -105,6 +109,7 @@ export const GettingStarted = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={onStartAdventure}
             className="btn-game text-lg px-8 py-4"
           >
             <span>Start Your Adventure</span>
