@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { languages } from '@/data/languages';
 import { useGameStore } from '@/store/gameStore';
-import { ArrowRight, Star, Search, Filter } from 'lucide-react';
+import { ArrowRight, Star, Search, Filter, X } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { TrendingLanguages } from '@/components/TrendingLanguages';
 import { ProgressSummary } from '@/components/ProgressSummary';
@@ -26,6 +26,7 @@ export const LanguageSelector = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedFilter, setSelectedFilter] = useState('all');
   const [selectedLanguageForLevel, setSelectedLanguageForLevel] = useState<string | null>(null);
+  const [showLanguageModal, setShowLanguageModal] = useState(false);
 
   const handleLanguageSelect = (languageId: string) => {
     setSelectedLanguageForLevel(languageId);
@@ -346,8 +347,72 @@ export const LanguageSelector = () => {
         </motion.div>
 
         {/* Getting Started Section */}
-        <GettingStarted />
+        <GettingStarted onStartAdventure={() => setShowLanguageModal(true)} />
       </div>
+
+      {/* Language Selection Modal */}
+      {showLanguageModal && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          onClick={() => setShowLanguageModal(false)}
+        >
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            transition={{ type: "spring", bounce: 0.3 }}
+            className="bg-card/95 backdrop-blur-lg rounded-3xl p-6 max-w-4xl w-full max-h-[80vh] overflow-y-auto border border-border/20 shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-2xl md:text-3xl font-fredoka font-bold text-gradient">
+                Choose Your Language
+              </h2>
+              <button
+                onClick={() => setShowLanguageModal(false)}
+                className="p-2 hover:bg-muted/50 rounded-xl transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {languages.map((language, index) => (
+                <motion.div
+                  key={language.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="card-interactive group cursor-pointer"
+                  onClick={() => {
+                    setShowLanguageModal(false);
+                    handleLanguageSelect(language.id);
+                  }}
+                >
+                  <div className="text-center p-4">
+                    <div className="text-4xl mb-3">{language.flag}</div>
+                    <h3 className="font-fredoka font-bold text-lg mb-2 group-hover:text-primary transition-colors">
+                      {language.name}
+                    </h3>
+                    <p className="text-xs text-muted-foreground mb-3">
+                      {languageDescriptions[language.id as keyof typeof languageDescriptions]?.slice(0, 50)}...
+                    </p>
+                    <div className="flex items-center justify-center gap-2 text-primary group-hover:text-primary-glow transition-colors">
+                      <span className="font-inter font-medium text-sm">Select</span>
+                      <ArrowRight className="w-3 h-3" />
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
     </div>
   );
 };
