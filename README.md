@@ -30,7 +30,8 @@ Built with modern tools and clean UI design, it provides a smooth experience for
 ## Made by
 1.Shaikh Nadeem <br>
 2.Aditya Yadav <br>
-3.Hassan 
+3.Hassan <br>
+4.Aditya Zalte
 
 ## Installation & Setup
 Follow these steps to run the project locally:
